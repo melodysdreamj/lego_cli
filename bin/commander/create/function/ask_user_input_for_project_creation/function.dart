@@ -10,7 +10,7 @@ Future<CreationResult?> askUserInputForProjectCreation() async {
         'What are you creating? (Press Enter for default, type "cancel" to exit)');
 
     print('1. New Project(default)');
-    print('2. Lego');
+    print('2. New Lego');
     String? typeSelection = await readLine();
     if (typeSelection?.toLowerCase() == 'cancel') {
       print('Operation cancelled.');
@@ -75,16 +75,16 @@ Future<CreationResult?> _createEmptyProject() async {
 }
 
 
-Future<CreationResult?> _createJuneViewProject() async {
-  String? name = await _getName('project');
-  if (name == null) return null; // Operation was cancelled.
-
-  String? packageName = await _getPackageName();
-  if (packageName == null) return null; // Operation was cancelled.
-
-  return CreationResult()..Type = ProjectTypeEnum.Skeleton..Name = name..PackageName = packageName;
-  // return CreationResult()..Type = ProjectTypeEnum.JuneViewProject..Name = name..PackageName = packageName;
-}
+// Future<CreationResult?> _createJuneViewProject() async {
+//   String? name = await _getName('project');
+//   if (name == null) return null; // Operation was cancelled.
+//
+//   String? packageName = await _getPackageName();
+//   if (packageName == null) return null; // Operation was cancelled.
+//
+//   return CreationResult()..Type = ProjectTypeEnum.Skeleton..Name = name..PackageName = packageName;
+//   // return CreationResult()..Type = ProjectTypeEnum.JuneViewProject..Name = name..PackageName = packageName;
+// }
 
 
 Future<CreationResult?> _createLegoTemplate() async {
