@@ -2,9 +2,9 @@ import 'dart:io';
 
 import 'package:yaml/yaml.dart';
 
-import '../build/function.dart';
-import '../build/function/flutter_package_add/function.dart';
-import '../build/function/flutter_package_remove/function.dart';
+import '../build_order/function.dart';
+import '../build_order/function/flutter_package_add/function.dart';
+import '../build_order/function/flutter_package_remove/function.dart';
 
 
 Future<void> addModule(String moduleName) async {

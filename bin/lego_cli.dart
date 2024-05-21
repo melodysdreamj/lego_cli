@@ -3,7 +3,7 @@ library lego_cli;
 import 'package:args/args.dart';
 
 import 'commander/add/function.dart';
-import 'commander/build/function.dart';
+import 'commander/build_order/function.dart';
 // import 'commander/build_view/function.dart';
 // import 'commander/build_view/function/spinner/function.dart';
 import 'commander/create/function.dart';
