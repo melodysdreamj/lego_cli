@@ -10,7 +10,7 @@ Future<CreationResult?> askUserInputForProjectCreation() async {
         'What are you creating? (Press Enter for default, type "cancel" to exit)');
 
     print('1. New Project(default)');
-    print('2. New Lego');
+    print('2. New Lego Plugin');
     String? typeSelection = await readLine();
     if (typeSelection?.toLowerCase() == 'cancel') {
       print('Operation cancelled.');
