@@ -88,7 +88,7 @@ Future<CreationResult?> _createEmptyProject() async {
 
 
 Future<CreationResult?> _createLegoTemplate() async {
-  String? name = await _getName('module');
+  String? name = await _getName('lego plugin');
   if (name == null) return null; // Operation was cancelled.
   return CreationResult()..Type = ProjectTypeEnum.LegoTemplate..Name = name;
   // return CreationResult()..Type = ProjectTypeEnum.ModuleTemplate..Name = name;
@@ -122,7 +122,7 @@ Future<String?> _getName(String type) async {
     }
     break;
   }
-  return name;
+  return '${name}_lego';
 }
 
 Future<String?> _getPackageName() async {
