@@ -122,7 +122,11 @@ Future<String?> _getName(String type) async {
     }
     break;
   }
-  return '${name}_lego';
+  if(type == 'lego plugin') {
+    return '${name}_lego';
+  }else {
+    return name;
+  }
 }
 
 Future<String?> _getPackageName() async {
