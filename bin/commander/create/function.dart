@@ -56,6 +56,7 @@ createApp() async {
   } else if (result.Type == ProjectTypeEnum.LegoTemplate) {
     await replaceStringInFiles(
         path.join(
+          result.Name,
           'lib',
           'util',
           '_',
