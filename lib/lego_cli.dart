@@ -1,3 +1,5 @@
+library lego_cli;
+
 import 'package:args/args.dart';
 
 import 'commander/add/function.dart';
