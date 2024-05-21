@@ -81,10 +81,10 @@ createApp() async {
     ]);
 
     // } else if (result.Type == ProjectTypeEnum.ViewTemplate) {
-    //   await renameNewFolders('${result.Name}/assets/view', result.Name);
+      await renameNewFolders('${result.Name}/assets/lego', result.Name);
     //   await reCreateNameNewFolders('${result.Name}/lib/app/_/_/interaction', result.Name);
-    //   await replaceStringInFile('${result.Name}/README.md', 'NewModule', result.Name);
-    //   await replaceStringInFile('${result.Name}/pubspec.yaml', 'assets/view/_new/', 'assets/view/${result.Name}/');
+      await replaceStringInFile('${result.Name}/README.md', 'NewLego', result.Name);
+      await replaceStringInFile('${result.Name}/pubspec.yaml', 'assets/lego/_new/', 'assets/view/${result.Name}/');
     //   await renameNewFolders('${result.Name}/lib/widget_book', result.Name, checkDirName: [
     //     '_new',
     //     '_new.dialog',
