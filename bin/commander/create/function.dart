@@ -54,13 +54,21 @@ createApp() async {
     //   await replaceStringInFiles(result.Name, 'june.lee.lego', result.PackageName);
     //   await removeFile('${result.Name}/LICENSE');
   } else if (result.Type == ProjectTypeEnum.LegoTemplate) {
-    await replaceStringInFiles(path.join('lib', 'util', '_', 'build_app',), 'New',
+    await replaceStringInFiles(
+        path.join(
+          'lib',
+          'util',
+          '_',
+          'build_app',
+        ),
+        'New',
         _toPascalCase(result.Name));
 
     await renameNewFolders(path.join(result.Name, 'lib', 'util'), result.Name);
     await renameNewFolders(path.join(result.Name, 'assets', 'lego'), result.Name);
 
-    await replaceStringInFile(path.join(result.Name, 'pubspec.yaml'), 'assets/lego/_new/', 'assets/lego/${result.Name}/');
+    await replaceStringInFile(
+        path.join(result.Name, 'pubspec.yaml'), 'assets/lego/_new/', 'assets/lego/${result.Name}/');
 
     await renameNewFolders(path.join(result.Name, 'lib', 'widget_book'), result.Name, checkDirName: [
       '_new',
@@ -71,19 +79,19 @@ createApp() async {
       '_new.in_app_notification',
     ]);
 
-  // } else if (result.Type == ProjectTypeEnum.ViewTemplate) {
-  //   await renameNewFolders('${result.Name}/assets/view', result.Name);
-  //   await reCreateNameNewFolders('${result.Name}/lib/app/_/_/interaction', result.Name);
-  //   await replaceStringInFile('${result.Name}/README.md', 'NewModule', result.Name);
-  //   await replaceStringInFile('${result.Name}/pubspec.yaml', 'assets/view/_new/', 'assets/view/${result.Name}/');
-  //   await renameNewFolders('${result.Name}/lib/widget_book', result.Name, checkDirName: [
-  //     '_new',
-  //     '_new.dialog',
-  //     '_new.bottom_sheet',
-  //     '_new.snackbar',
-  //     '_new.toast',
-  //     '_new.in_app_notification',
-  //   ]);
+    // } else if (result.Type == ProjectTypeEnum.ViewTemplate) {
+    //   await renameNewFolders('${result.Name}/assets/view', result.Name);
+    //   await reCreateNameNewFolders('${result.Name}/lib/app/_/_/interaction', result.Name);
+    //   await replaceStringInFile('${result.Name}/README.md', 'NewModule', result.Name);
+    //   await replaceStringInFile('${result.Name}/pubspec.yaml', 'assets/view/_new/', 'assets/view/${result.Name}/');
+    //   await renameNewFolders('${result.Name}/lib/widget_book', result.Name, checkDirName: [
+    //     '_new',
+    //     '_new.dialog',
+    //     '_new.bottom_sheet',
+    //     '_new.snackbar',
+    //     '_new.toast',
+    //     '_new.in_app_notification',
+    //   ]);
   } else {
     print('Invalid project type: ${result.Type}');
     return;
